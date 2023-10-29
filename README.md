@@ -173,24 +173,19 @@ int main(int argc, char **argv)
            block.x, block.y, iElaps);
     // check kernel error
     CHECK(cudaGetLastError());
-
     // copy kernel result back to host side
     CHECK(cudaMemcpy(gpuRef, d_MatC, nBytes, cudaMemcpyDeviceToHost));
-
     // check device results
     checkResult(hostRef, gpuRef, nxy);
-
     // free device global memory
     CHECK(cudaFree(d_MatA));
     CHECK(cudaFree(d_MatB));
     CHECK(cudaFree(d_MatC));
-
     // free host memory
     free(h_A);
     free(h_B);
     free(hostRef);
     free(gpuRef);
-
     // reset device
     CHECK(cudaDeviceReset());
     return (0);
