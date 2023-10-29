@@ -199,6 +199,7 @@ int main(int argc, char **argv)
 ## Output:
 ### Integer Matrix Addition:
 ![Alt text](ot1.PNG)
+
 Matrix initialization : 6.338138 sec.
 
 Sum matrix on Host : 0.884061 sec.
